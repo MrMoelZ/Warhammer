@@ -1,0 +1,13 @@
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\bin\Debug\QDWH.exe.config
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\bin\Debug\QDWH.exe
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\bin\Debug\QDWH.pdb
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.csprojResolveAssemblyReference.cache
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\MainWindow.baml
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\MainWindow.g.cs
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\App.g.cs
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH_MarkupCompile.cache
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.g.resources
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.Properties.Resources.resources
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.csproj.GenerateResource.Cache
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.exe
+D:\Development\Tutorials\proj\Warhammer\QDWH\QDWH\obj\Debug\QDWH.pdb

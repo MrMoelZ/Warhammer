@@ -1,0 +1,47 @@
+﻿<Window x:Class="Warhammer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WarHammer Tabletop Desktop Adaption" Height="850" Width="1400">
+
+    <Window.Resources>
+        <Style x:Key="TextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18pt" />
+            <Setter Property="FontFamily" Value="Caslon Antique" />
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18pt" />
+            <Setter Property="FontFamily" Value="Caslon Antique" />
+        </Style>
+    </Window.Resources>
+
+
+    <Grid Name="MAIN">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource ResourceKey=TextStyle}" Width="350" Name="InfoBarPart1" />
+            <Rectangle VerticalAlignment="Stretch" Width="1" Margin="0" Stroke="Black" />
+            <TextBlock Style="{StaticResource ResourceKey=TextStyle}" Width="200" Name="InfoBarPart2" />
+            <Rectangle VerticalAlignment="Stretch" Width="1" Margin="0" Stroke="Black" />
+            <TextBlock Style="{StaticResource ResourceKey=TextStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="InfoBarPart3" />
+        </StackPanel>
+        <Canvas Name="maincanvas" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="BurlyWood"/>
+        <StackPanel Name="Sidebar" Grid.Row="2" Grid.Column="1"  Orientation="Vertical" Background="Gray">
+            <TextBlock Style="{StaticResource ResourceKey=TextStyle}" FontSize="12pt" Name="StatusBar" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Canvas Name="botcanvas" Grid.Row="3" Background="Gainsboro" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button Name="Menu" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Background="Silver" Content="Menu" Click="ExpandMenu"/>
+        
+        <Button Name="NextPhase" Style="{StaticResource ResourceKey=ButtonStyle}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Next Phase" Click="NextPhase_Click"/>
+    </Grid>
+</Window>
