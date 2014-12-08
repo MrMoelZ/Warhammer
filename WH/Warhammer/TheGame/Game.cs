@@ -126,11 +126,13 @@ namespace Warhammer.TheGame
             
         }
 
+        //turn dummy
         public void Rectangle_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             Polyline thismodel = sender as Polyline;
             Clan_Rat thisobj = thismodel.Tag as Clan_Rat;
-            thisobj.Orientation = 90;
+            thisobj.Orientation = 138;
+            thisobj.RotateModel(thismodel);
         }
 
 

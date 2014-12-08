@@ -51,8 +51,12 @@ namespace Warhammer.Models
             var posi = this.ModelShape.TranslatePoint(new Point(0, 0), maincanvas);
             var x = posi.X;
             var y = posi.Y;
+            Line line=CreateLine.Create(new Point(x, y), new Point(x + 2.0, y + 2.0), Colors.LawnGreen);
+            maincanvas.Children.Add(line);
+
             MessageBox.Show("Point: " + x + " " + y);
-            RotateTransform rt = new RotateTransform(this.Orientation,x,y);
+            RotateTransform rt = new RotateTransform(this.Orientation,x,x);
+            
             this.ModelShape.RenderTransform = rt;
         }
 
