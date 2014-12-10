@@ -20,6 +20,7 @@ namespace Warhammer.TheGame
 {
     public class Game
     {
+        bool _rotating = false;
         TextBlock infobarp1;
         TextBlock infobarp2;
         TextBlock infobarp3;
@@ -52,6 +53,8 @@ namespace Warhammer.TheGame
         {
             //hook up mouseevents canvas
             maincanvas.MouseLeftButtonUp += maincanvas_MouseLeftButtonUp;
+            maincanvas.MouseRightButtonDown += maincanvas_MouseRightButtonDown;
+            maincanvas.MouseRightButtonUp += maincanvas_MouseRightButtonUp;
 
             // create new Rat
 
@@ -77,6 +80,11 @@ namespace Warhammer.TheGame
             }
             Round = 1;
             GamePhase(GamePhases.PlacementPhase);
+        }
+
+        private void Rectangle_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public void NextPhase()
@@ -126,20 +134,33 @@ namespace Warhammer.TheGame
             
         }
 
-        //turn dummy
-        public void Rectangle_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        
+        public void maincanvas_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Polyline thismodel = sender as Polyline;
-            Clan_Rat thisobj = thismodel.Tag as Clan_Rat;
-            thisobj.Orientation = 138;
-            thisobj.RotateModel(thismodel);
+            _rotating = true;
+        }
+
+        //turn dummy
+        public void rotate(Point posi)
+        {
+            var thismodel = SelectedModel;
+            var thisobj = thismodel.Tag as Clan_Rat;
+            thisobj.RotateModel(thismodel, posi);
+        }
+
+        public void maincanvas_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (_rotating)
+            {
+                var posi = e.GetPosition(maincanvas);
+                rotate(posi);
+            }
         }
 
 
         public void maincanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             var posi = e.GetPosition(maincanvas);
-            TranslateTransform tt = new TranslateTransform(posi.X - 10, posi.Y - 10);
 
             switch (Phase)
             {
@@ -147,7 +168,9 @@ namespace Warhammer.TheGame
                     if (IsPlacement)
                     {
                         var model = UnitToPlace.ModelShape;
-                        model.RenderTransform = tt;
+                        Clan_Rat thisobj = model.Tag as Clan_Rat;
+                        thisobj.MoveTo(posi.X - 10, posi.Y - 10);
+                        //model.RenderTransform = tt;
                         botcanvas.Children.Remove(model);
                         maincanvas.Children.Add(model);
                         //model.Stroke = new SolidColorBrush(Colors.Black);
@@ -164,7 +187,8 @@ namespace Warhammer.TheGame
                     {
                         if (SelectedModel != null)
                         {
-                            SelectedModel.RenderTransform = tt;
+                            var model=SelectedModel.Tag as Clan_Rat;
+                            model.MoveTo(posi.X - 10, posi.Y - 10);
                         }
                     }
                     break;
@@ -253,34 +277,7 @@ namespace Warhammer.TheGame
 
         private void ShowSightCone(_Skaven obj)
         {
-            var r = obj.ModelShape;
-            if (obj.HasSightCone)
-            {
-                maincanvas.Children.Remove(obj.SightCone);
-                obj.HasSightCone = false;
-            }
-            else
-            {
-                var SightCone = new Polyline();
-                var posi = r.TranslatePoint(new Point(0, 0), maincanvas);
-                var endposi = new Point(posi.X - 100, posi.Y - 100);
-                SightCone.Points.Add(posi);
-                SightCone.Points.Add(endposi);
-                posi = new Point(posi.X + 20, posi.Y);
-                endposi = new Point(posi.X + 100, posi.Y - 100);
-                SightCone.Points.Add(endposi);
-                SightCone.Points.Add(posi);
-                var brush = new SolidColorBrush();
-                brush.Color = Colors.Blue;
-                brush.Opacity = 1.0;
-                SightCone.Stroke = brush;
-                brush.Opacity = 0.3;
-                SightCone.Fill = brush;
-                maincanvas.Children.Add(SightCone);
-                SightCones.Add(SightCone);
-                obj.SightCone = SightCone;
-                obj.HasSightCone = true;
-            }
+            obj.ToggleSightline();
         }
     }
 }

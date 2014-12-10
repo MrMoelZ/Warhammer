@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Warhammer.Models;
 
 namespace Warhammer.Helpers
 {
     public static class CreateModel
     {
+        
+
         public static Polyline Create(Color col, double height = 20, double width = 20, double opacity = 1.0)
         {
             Polyline model = new Polyline();

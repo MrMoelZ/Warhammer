@@ -36,12 +36,13 @@
             <TextBlock Style="{StaticResource ResourceKey=TextStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="InfoBarPart3" />
         </StackPanel>
         <Canvas Name="maincanvas" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="BurlyWood"/>
+        
         <StackPanel Name="Sidebar" Grid.Row="2" Grid.Column="1"  Orientation="Vertical" Background="Gray">
             <TextBlock Style="{StaticResource ResourceKey=TextStyle}" FontSize="12pt" Name="StatusBar" TextWrapping="Wrap"/>
         </StackPanel>
         <Canvas Name="botcanvas" Grid.Row="3" Background="Gainsboro" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <Button Name="Menu" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Background="Silver" Content="Menu" Click="ExpandMenu"/>
-        
+
         <Button Name="NextPhase" Style="{StaticResource ResourceKey=ButtonStyle}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Next Phase" Click="NextPhase_Click"/>
     </Grid>
 </Window>
