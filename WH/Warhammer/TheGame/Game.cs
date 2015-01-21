@@ -55,6 +55,7 @@ namespace Warhammer.TheGame
             maincanvas.MouseLeftButtonUp += maincanvas_MouseLeftButtonUp;
             maincanvas.MouseRightButtonDown += maincanvas_MouseRightButtonDown;
             maincanvas.MouseRightButtonUp += maincanvas_MouseRightButtonUp;
+            maincanvas.MouseMove += maincanvas_MouseMove;
 
             // create new Rat
 
@@ -84,7 +85,17 @@ namespace Warhammer.TheGame
 
         private void Rectangle_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            _rotating = true;
+
+        }
+
+        private void maincanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_rotating)
+            {
+                var posi = e.GetPosition(maincanvas);
+                rotate(posi);
+            }
         }
 
         public void NextPhase()
@@ -150,11 +161,7 @@ namespace Warhammer.TheGame
 
         public void maincanvas_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (_rotating)
-            {
-                var posi = e.GetPosition(maincanvas);
-                rotate(posi);
-            }
+            _rotating = false;
         }
 
 
