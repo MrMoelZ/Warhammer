@@ -53,3 +53,16 @@ D:\Development\Tutorials\proj\Warhammer\WH\Warhammer\obj\Debug\Warhammer.Propert
 D:\Development\Tutorials\proj\Warhammer\WH\Warhammer\obj\Debug\Warhammer.csproj.GenerateResource.Cache
 D:\Development\Tutorials\proj\Warhammer\WH\Warhammer\obj\Debug\Warhammer.exe
 D:\Development\Tutorials\proj\Warhammer\WH\Warhammer\obj\Debug\Warhammer.pdb
+D:\Development\WarhammerGIT\WH\Warhammer\bin\Debug\Warhammer.exe.config
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.csprojResolveAssemblyReference.cache
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\MainWindow.baml
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\MainWindow.g.cs
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\App.g.cs
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer_MarkupCompile.cache
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.g.resources
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.Properties.Resources.resources
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.csproj.GenerateResource.Cache
+D:\Development\WarhammerGIT\WH\Warhammer\bin\Debug\Warhammer.exe
+D:\Development\WarhammerGIT\WH\Warhammer\bin\Debug\Warhammer.pdb
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.exe
+D:\Development\WarhammerGIT\WH\Warhammer\obj\Debug\Warhammer.pdb

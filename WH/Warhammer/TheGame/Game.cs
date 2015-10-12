@@ -223,18 +223,18 @@ namespace Warhammer.TheGame
                     break;
                 case GamePhases.ShootingPhase_NextShooting:
                     break;
-                case GamePhases.CombatPhase_FightRound:
-                    // take every enemy unit and check if posi is in Zone of Influence (ZOI)
-                    foreach (var unit in EnemyUnits)
-                    {
-                        if(unit.IsInZOI(posi))
-                        {
-                            // 1.) calculate Distance (is it possible to reach enemy)
-                            // 2.) roll to check if enemy is actually reached
-                            // 3.) set marker for combat phase
-                        }
-                    }
-                    break;
+                //case GamePhases.CombatPhase_FightRound:
+                //    // take every enemy unit and check if posi is in Zone of Influence (ZOI)
+                //    foreach (var unit in EnemyUnits)
+                //    {
+                //        if(unit.IsInZOI(posi))
+                //        {
+                //            // 1.) calculate Distance (is it possible to reach enemy)
+                //            // 2.) roll to check if enemy is actually reached
+                //            // 3.) set marker for combat phase
+                //        }
+                //    }
+                //    break;
                 case GamePhases.CombatPhase_CalculateResult:
                     break;
                 case GamePhases.CombatPhase_BreakTest:

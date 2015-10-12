@@ -22,7 +22,7 @@ namespace Warhammer.Helpers
             brush.Opacity = 1.0;
             brush.Color = col;
             line.Stroke = brush;
-            
+             
             return line;
         }
     }
